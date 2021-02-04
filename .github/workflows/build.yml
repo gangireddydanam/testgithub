@@ -1,0 +1,27 @@
+name: testing multiple branches
+on:
+  push: 
+    branches: 
+      - main 
+      - develop 
+jobs:
+  develop:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: display dev echo 
+      id: dev
+      run: |
+        echo 'hello develop'
+
+  
+  main:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: display prod echo 
+      id: prod
+      run: |
+        echo 'hello prod'
